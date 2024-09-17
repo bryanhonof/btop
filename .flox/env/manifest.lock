@@ -1,0 +1,1091 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "clang": {
+        "pkg-path": "clang"
+      },
+      "cmake": {
+        "pkg-path": "cmake"
+      },
+      "corefoundation": {
+        "pkg-path": "darwin.apple_sdk.frameworks.CoreFoundation",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin"
+        ]
+      },
+      "coreutils": {
+        "pkg-path": "coreutils"
+      },
+      "iokit": {
+        "pkg-path": "darwin.apple_sdk.frameworks.IOKit",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin"
+        ]
+      },
+      "libcxx": {
+        "pkg-path": "libcxx"
+      },
+      "lld": {
+        "pkg-path": "lld"
+      },
+      "lowdown": {
+        "pkg-path": "lowdown"
+      },
+      "ninja": {
+        "pkg-path": "ninja"
+      },
+      "sysctl": {
+        "pkg-path": "sysctl",
+        "systems": [
+          "aarch64-darwin",
+          "x86_64-darwin"
+        ]
+      }
+    },
+    "vars": {},
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {},
+      "cuda-detection": false
+    },
+    "services": {},
+    "build": {
+      "btop": {
+        "command": "# Create out dir\nmkdir -p $out\n\n# Configure\nexport CXX=\"$FLOX_ENV/bin/clang++\"\nexport CXXFLAGS=\"-F$FLOX_ENV/Library/Frameworks -I$FLOX_ENV/include -std=c++20\"\nexport LDFLAGS=\"-L$FLOX_ENV/lib -Wl,-rpath,$FLOX_ENV/lib/c++ -fuse-ld=$FLOX_ENV/bin/ld64.lld\"\nexport LIBCLANG_PATH=\"$FLOX_ENV/lib\"\nexport CMAKE_REQUIRED_INCLUDES=\"$FLOX_ENV/include\"\ncmake -B build -G Ninja\n\n# Build\ncmake --build build --verbose\n\n# Install\ncmake --install $out\n",
+        "files": null,
+        "systems": null,
+        "sandbox": null
+      }
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "clang",
+      "broken": false,
+      "derivation": "/nix/store/kx00vfvblgv363bnm3azbspv6r55gifh-clang-wrapper-16.0.6.drv",
+      "description": "C language family frontend for LLVM (wrapper script)",
+      "install_id": "clang",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "clang-wrapper-16.0.6",
+      "pname": "clang",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/8c3v3rdzvi5364x9m959ijyy6iamqf5f-clang-wrapper-16.0.6"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "clang",
+      "broken": false,
+      "derivation": "/nix/store/g3z7anix8hmx03pxpwsv47935vig80p7-clang-wrapper-18.1.8.drv",
+      "description": "C language family frontend for LLVM (wrapper script)",
+      "install_id": "clang",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "clang-wrapper-18.1.8",
+      "pname": "clang",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-18.1.8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/r05x7gzyxq4j1yj6vqbjwcc41yaab948-clang-wrapper-18.1.8"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "clang",
+      "broken": false,
+      "derivation": "/nix/store/pickx0jr4ihayv84iqkns2zqhakwqm7h-clang-wrapper-16.0.6.drv",
+      "description": "C language family frontend for LLVM (wrapper script)",
+      "install_id": "clang",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "clang-wrapper-16.0.6",
+      "pname": "clang",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/kk0zkxvj9k09ra65gg9pzd9mlzykbxps-clang-wrapper-16.0.6"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "clang",
+      "broken": false,
+      "derivation": "/nix/store/cbcycrmysycrmvk0l42m1kl397via74d-clang-wrapper-18.1.8.drv",
+      "description": "C language family frontend for LLVM (wrapper script)",
+      "install_id": "clang",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "clang-wrapper-18.1.8",
+      "pname": "clang",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "wrapper-18.1.8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/4rz4z2bkb68vwbdxcwq0jxh2fyhhiqkh-clang-wrapper-18.1.8"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cmake",
+      "broken": false,
+      "derivation": "/nix/store/dlzvcbb2w8rjsvc3ba6cm2447jg0x4fl-cmake-3.29.6.drv",
+      "description": "Cross-platform, open-source build system generator",
+      "install_id": "cmake",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "cmake-3.29.6",
+      "pname": "cmake",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.29.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/bnw436hkmrzi6wa2i8n6swyc35hw63zk-cmake-3.29.6"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cmake",
+      "broken": false,
+      "derivation": "/nix/store/mrwx6fwlwq574z109f9399icplnchmjk-cmake-3.29.6.drv",
+      "description": "Cross-platform, open-source build system generator",
+      "install_id": "cmake",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "cmake-3.29.6",
+      "pname": "cmake",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.29.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/nxhkn6c32i7rvjw3i12bffb3q911g7hj-cmake-3.29.6-debug",
+        "out": "/nix/store/rd3byxvm1pxl923nc5vx79pykq4wh4li-cmake-3.29.6"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cmake",
+      "broken": false,
+      "derivation": "/nix/store/bs20vsf82cglpgsablpkq0ihr1is1akc-cmake-3.29.6.drv",
+      "description": "Cross-platform, open-source build system generator",
+      "install_id": "cmake",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "cmake-3.29.6",
+      "pname": "cmake",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.29.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/zjv124gn2b7zkxjf97plmf9hl5fxnpvi-cmake-3.29.6"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cmake",
+      "broken": false,
+      "derivation": "/nix/store/1rchq3x4xj3kns8v0i680g12129x9wbm-cmake-3.29.6.drv",
+      "description": "Cross-platform, open-source build system generator",
+      "install_id": "cmake",
+      "license": "BSD-3-Clause",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "cmake-3.29.6",
+      "pname": "cmake",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "3.29.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/rjyfyyrfshs95b5mj6spr0ywgkiajidw-cmake-3.29.6-debug",
+        "out": "/nix/store/yzi080r2c1zn2jzrhcfdv7dmr92yw07l-cmake-3.29.6"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreFoundation",
+      "broken": false,
+      "derivation": "/nix/store/sxqnysps6qv1qflly708hm71625fkfz7-apple-framework-CoreFoundation-11.0.0.drv",
+      "description": "Apple SDK framework CoreFoundation",
+      "install_id": "corefoundation",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "apple-framework-CoreFoundation-11.0.0",
+      "pname": "CoreFoundation",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreFoundation-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/qwcay9inpzjj0gjwam6xmiv654z8x172-apple-framework-CoreFoundation-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.CoreFoundation",
+      "broken": false,
+      "derivation": "/nix/store/v8f70g13j34xkmy86ql5yi4xplvasvnv-apple-framework-CoreFoundation.drv",
+      "description": "Apple SDK framework CoreFoundation",
+      "install_id": "corefoundation",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "apple-framework-CoreFoundation",
+      "pname": "CoreFoundation",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-CoreFoundation",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/a295q0l0vgj81p35865v6x2f22qf30rr-apple-framework-CoreFoundation"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "coreutils",
+      "broken": false,
+      "derivation": "/nix/store/55ms78kc0r5ncpa13wbpya7cgi6i6zx0-coreutils-9.5.drv",
+      "description": "GNU Core Utilities",
+      "install_id": "coreutils",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "coreutils-9.5",
+      "pname": "coreutils",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "9.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/ps81dqzr6fxafmxih1834v545dh4apjm-coreutils-9.5-info",
+        "out": "/nix/store/1l41471x6rlf7l544s1bxkqqgpprd28m-coreutils-9.5"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "coreutils",
+      "broken": false,
+      "derivation": "/nix/store/fbnqx9d9skgp22g0xkc53jgqy0804afb-coreutils-9.5.drv",
+      "description": "GNU Core Utilities",
+      "install_id": "coreutils",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "coreutils-9.5",
+      "pname": "coreutils",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "9.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/g66h1ajc1wx18milg2290yylbivq2jhd-coreutils-9.5-debug",
+        "info": "/nix/store/y311wv5dlqakkq6hr3yl6zmiiprxb3v5-coreutils-9.5-info",
+        "out": "/nix/store/ssqdazslv2wjpybnk0pjwnpq0dfpa6q2-coreutils-9.5"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "coreutils",
+      "broken": false,
+      "derivation": "/nix/store/r3vjhg84a2d0ydf52038pic8wibaxbpr-coreutils-9.5.drv",
+      "description": "GNU Core Utilities",
+      "install_id": "coreutils",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "coreutils-9.5",
+      "pname": "coreutils",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "9.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "info": "/nix/store/jgslj3bb2rs55xaaxarqwsg7bppfxg8p-coreutils-9.5-info",
+        "out": "/nix/store/mw0amk6q5v2401y3s8zg7hxa2v0ia6vw-coreutils-9.5"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "coreutils",
+      "broken": false,
+      "derivation": "/nix/store/57hlz5fnvfgljivf7p18fmcl1yp6d29z-coreutils-9.5.drv",
+      "description": "GNU Core Utilities",
+      "install_id": "coreutils",
+      "license": "GPL-3.0-or-later",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "coreutils-9.5",
+      "pname": "coreutils",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "9.5",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/73i7cdbz2w862wx1gfxxvyrw95rmmwl3-coreutils-9.5-debug",
+        "info": "/nix/store/p1mj9zdizsa605xsy3jjx4db4ya1wnix-coreutils-9.5-info",
+        "out": "/nix/store/0kg70swgpg45ipcz3pr2siidq9fn6d77-coreutils-9.5"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.IOKit",
+      "broken": false,
+      "derivation": "/nix/store/m5xs6d8wv67p9m0x95lsh8jk80il41ih-apple-framework-IOKit-11.0.0.drv",
+      "description": "Apple SDK framework IOKit",
+      "install_id": "iokit",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "apple-framework-IOKit-11.0.0",
+      "pname": "IOKit",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-IOKit-11.0.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/98y8hasfr23dbslfl946141xc9k9y33f-apple-framework-IOKit-11.0.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "darwin.apple_sdk.frameworks.IOKit",
+      "broken": false,
+      "derivation": "/nix/store/qwjyqzsjqvhv4pkmvg8bjrjy01zzdcv7-apple-framework-IOKit.drv",
+      "description": "Apple SDK framework IOKit",
+      "install_id": "iokit",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "apple-framework-IOKit",
+      "pname": "IOKit",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "apple-framework-IOKit",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/dl39x6hfgn1aam1rl7ngkbp5i946wiwm-apple-framework-IOKit"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libcxx",
+      "broken": false,
+      "derivation": "/nix/store/jw7q82vm776jmh1hy4s2sq2hj4d59678-libcxx-16.0.6.drv",
+      "description": "C++ standard library",
+      "install_id": "libcxx",
+      "license": "[ MIT, NCSA ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "libcxx-16.0.6",
+      "pname": "libcxx",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/pfnvcf6j6996r1gj27yhisqz88i0g21p-libcxx-16.0.6-dev",
+        "out": "/nix/store/5jvcxrw91ccnbj6n67k8kc41dk59raqk-libcxx-16.0.6"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libcxx",
+      "broken": false,
+      "derivation": "/nix/store/04amjmdm3ls317rss4k1i5hs03l0a3r5-libcxx-18.1.8.drv",
+      "description": "C++ standard library",
+      "install_id": "libcxx",
+      "license": "[ MIT, NCSA ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "libcxx-18.1.8",
+      "pname": "libcxx",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.1.8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/j2kvml4fcfhggmj58zaglyclajz37mii-libcxx-18.1.8-dev",
+        "out": "/nix/store/m2k8475f70z9cyzx0czvj3lxjgl5gvvj-libcxx-18.1.8"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libcxx",
+      "broken": false,
+      "derivation": "/nix/store/dy5ifybxvachjqpxnczsq58jd1gmaffs-libcxx-16.0.6.drv",
+      "description": "C++ standard library",
+      "install_id": "libcxx",
+      "license": "[ MIT, NCSA ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "libcxx-16.0.6",
+      "pname": "libcxx",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/5z5xmh8vlg3ifmcpjxi6csafw112x0g0-libcxx-16.0.6-dev",
+        "out": "/nix/store/aali9wrbqacjwl3l4szbhgk73nv219jr-libcxx-16.0.6"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "libcxx",
+      "broken": false,
+      "derivation": "/nix/store/ls9r1r6dxbzcl4kb4v5w7q8j40z2imxw-libcxx-18.1.8.drv",
+      "description": "C++ standard library",
+      "install_id": "libcxx",
+      "license": "[ MIT, NCSA ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "libcxx-18.1.8",
+      "pname": "libcxx",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.1.8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/lgy959d2i3psg6a85pv2vx4bwmva4m0r-libcxx-18.1.8-dev",
+        "out": "/nix/store/yldgl6y1dy6nmvy9gza0flgh9is3k4s1-libcxx-18.1.8"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lld",
+      "broken": false,
+      "derivation": "/nix/store/7akcj4y1gzm5knsnsmrlwiivjlf09gn1-lld-16.0.6.drv",
+      "description": "LLVM linker (unwrapped)",
+      "install_id": "lld",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lld-16.0.6",
+      "pname": "lld",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/zdn71jc452hirpwm4my2y9c6hlc63ql8-lld-16.0.6-dev",
+        "lib": "/nix/store/vzjik5mr6svdx4azjafa81y24krgzki7-lld-16.0.6-lib",
+        "out": "/nix/store/jlb09bjnz6kvncv9033mj16v77jxfl0n-lld-16.0.6"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lld",
+      "broken": false,
+      "derivation": "/nix/store/sij36qhk46wlqrlcy3gip9dxwscyxpxb-lld-18.1.8.drv",
+      "description": "LLVM linker (unwrapped)",
+      "install_id": "lld",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lld-18.1.8",
+      "pname": "lld",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.1.8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/liicnc82v0xdizr66pmwbaxc2aiqfdwm-lld-18.1.8-dev",
+        "lib": "/nix/store/v6l5wm8k2ll9i3f7fc9lhizbhgw5psw6-lld-18.1.8-lib",
+        "out": "/nix/store/b00b6fbi79ksw76g4pdybhiwrjswbngq-lld-18.1.8"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lld",
+      "broken": false,
+      "derivation": "/nix/store/g0ymngxvxnxw0xxhzfirfrb9nabvmhbq-lld-16.0.6.drv",
+      "description": "LLVM linker (unwrapped)",
+      "install_id": "lld",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lld-16.0.6",
+      "pname": "lld",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "16.0.6",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/yfs197wvjj4j2s43fy6yajns7mlv39ln-lld-16.0.6-dev",
+        "lib": "/nix/store/ww14bjlm1p8w2l3pw2v7cd4zxgpsfm8l-lld-16.0.6-lib",
+        "out": "/nix/store/8y9ck5jmi1g34ljz21rvs3azdpg0bi2k-lld-16.0.6"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lld",
+      "broken": false,
+      "derivation": "/nix/store/zmx9yyzgyb5gmyjqf0h6kqpmippcqs8d-lld-18.1.8.drv",
+      "description": "LLVM linker (unwrapped)",
+      "install_id": "lld",
+      "license": "NCSA",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lld-18.1.8",
+      "pname": "lld",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "18.1.8",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "dev": "/nix/store/88k1yqv8m6d4r9idvgl3idba0l54z19a-lld-18.1.8-dev",
+        "lib": "/nix/store/v8zgb0cp4dfypn3ldik232f2yrq88cfj-lld-18.1.8-lib",
+        "out": "/nix/store/jkhx8fd82ws4daz7my7vrlbmsljdchnc-lld-18.1.8"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lowdown",
+      "broken": false,
+      "derivation": "/nix/store/04wy90bcjv1zam9r5ql7inyjnx10c3b2-lowdown-1.1.0.drv",
+      "description": "Simple markdown translator",
+      "install_id": "lowdown",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lowdown-1.1.0",
+      "pname": "lowdown",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "dev": "/nix/store/d46d7kiqv89n7xx6i7gaima99xxa3qyn-lowdown-1.1.0-dev",
+        "lib": "/nix/store/kz5qr6mqsirvhk3jr4v3bx08fpnd8l74-lowdown-1.1.0-lib",
+        "man": "/nix/store/4chd6fg97wdfmg7ikk8rcdhi1iph47cj-lowdown-1.1.0-man",
+        "out": "/nix/store/f643a0i2qk9zv08rs2ccxh2vp1chlsah-lowdown-1.1.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lowdown",
+      "broken": false,
+      "derivation": "/nix/store/ralvlbiynkdqf3g853f8pzlfk8jhx2ak-lowdown-1.1.0.drv",
+      "description": "Simple markdown translator",
+      "install_id": "lowdown",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lowdown-1.1.0",
+      "pname": "lowdown",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "dev": "/nix/store/2y3vl7a60s3xc5qrjz7ilqcrdgazk902-lowdown-1.1.0-dev",
+        "lib": "/nix/store/86mp5bkl61c5w4wfmx6palhjchx5qmfx-lowdown-1.1.0-lib",
+        "man": "/nix/store/v9cpwfm2fr5rdl9ks470nnxhiwk6ffvf-lowdown-1.1.0-man",
+        "out": "/nix/store/1mgndkwpqh45rr8c1w11pznb0qp0n4b7-lowdown-1.1.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lowdown",
+      "broken": false,
+      "derivation": "/nix/store/8gl2z643pa7vmglj0wg1zb81fdxfd8xf-lowdown-1.1.0.drv",
+      "description": "Simple markdown translator",
+      "install_id": "lowdown",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lowdown-1.1.0",
+      "pname": "lowdown",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "dev": "/nix/store/4k38kbq6x2jlhh6whsk0k5qdrq6dilff-lowdown-1.1.0-dev",
+        "lib": "/nix/store/lxdqlzmzva776sb1wia4pkpjjvky8gg1-lowdown-1.1.0-lib",
+        "man": "/nix/store/nlf7609nj8qdxkrpaq9x7a00ydfy4n38-lowdown-1.1.0-man",
+        "out": "/nix/store/y4cs2s7la75pwsp10zj2jnxva3rigbp5-lowdown-1.1.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "lowdown",
+      "broken": false,
+      "derivation": "/nix/store/92si1dhmk1a3xinfp600ngiyylgr5wxf-lowdown-1.1.0.drv",
+      "description": "Simple markdown translator",
+      "install_id": "lowdown",
+      "license": "ISC",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "lowdown-1.1.0",
+      "pname": "lowdown",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.1.0",
+      "outputs_to_install": [
+        "out",
+        "man"
+      ],
+      "outputs": {
+        "dev": "/nix/store/5xskvr5bpivg85x38qn04pa9mm3q6z1w-lowdown-1.1.0-dev",
+        "lib": "/nix/store/bcd39kz7nqljfr2833hzn47h7rq50b3m-lowdown-1.1.0-lib",
+        "man": "/nix/store/qkvih2llbyfvcmpc2rdrwb6xirf2183r-lowdown-1.1.0-man",
+        "out": "/nix/store/g1l31bby2j0qmixk7dnd6yl6bwaykv67-lowdown-1.1.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ninja",
+      "broken": false,
+      "derivation": "/nix/store/nzhs02ci0j4a8addlpvkz2cmw2wbvcdn-ninja-1.12.1.drv",
+      "description": "Small build system with a focus on speed",
+      "install_id": "ninja",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "ninja-1.12.1",
+      "pname": "ninja",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.12.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/s1z911x3lzbblaflglqrgb9nplvsfzmz-ninja-1.12.1"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ninja",
+      "broken": false,
+      "derivation": "/nix/store/lc5ymprljxphz1ildc7dsr5xp9r5fazv-ninja-1.12.1.drv",
+      "description": "Small build system with a focus on speed",
+      "install_id": "ninja",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "ninja-1.12.1",
+      "pname": "ninja",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.12.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/0fh3p839z4r28nvj7j3w1ffbr8dmdckq-ninja-1.12.1"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ninja",
+      "broken": false,
+      "derivation": "/nix/store/rmhngc76zbdpr10bvzdsqhmbjgzpjmgw-ninja-1.12.1.drv",
+      "description": "Small build system with a focus on speed",
+      "install_id": "ninja",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "ninja-1.12.1",
+      "pname": "ninja",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.12.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/a6znq41y8qcinj72fk12in9740vk1i1z-ninja-1.12.1"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "ninja",
+      "broken": false,
+      "derivation": "/nix/store/bifkp3byg4zmc2j8j061l5b8q3zbs1mp-ninja-1.12.1.drv",
+      "description": "Small build system with a focus on speed",
+      "install_id": "ninja",
+      "license": "Apache-2.0",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "ninja-1.12.1",
+      "pname": "ninja",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.12.1",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/m0g218hn4rbq2wj7szzg8a112alq1qvc-ninja-1.12.1"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "sysctl",
+      "broken": false,
+      "derivation": "/nix/store/5bjy8yjxk7r24vdbvlc3cwb87g7955a0-sysctl-system_cmds-970.0.4.drv",
+      "install_id": "sysctl",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "sysctl-system_cmds-970.0.4",
+      "pname": "sysctl",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "system_cmds-970.0.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/8anx3yjwplp30p978mzy60l3nvz9mb2l-sysctl-system_cmds-970.0.4"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "sysctl",
+      "broken": false,
+      "derivation": "/nix/store/974vwm6y8p76w8qv9jqclf06mxr5qb0c-sysctl-system_cmds-970.0.4.drv",
+      "install_id": "sysctl",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "name": "sysctl-system_cmds-970.0.4",
+      "pname": "sysctl",
+      "rev": "345c263f2f53a3710abe117f28a5cb86d0ba4059",
+      "rev_count": 680873,
+      "rev_date": "2024-09-13T16:03:24Z",
+      "scrape_date": "2024-09-16T03:14:12Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "system_cmds-970.0.4",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/9jmap6jmybxlp9xmjzcn1r898gns7yik-sysctl-system_cmds-970.0.4"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

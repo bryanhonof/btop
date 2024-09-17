@@ -1,0 +1,59 @@
+version = 1
+
+[build]
+btop.command = '''
+# Create out dir
+mkdir -p $out
+
+# Configure
+export CXX="$FLOX_ENV/bin/clang++"
+export CXXFLAGS="-F$FLOX_ENV/Library/Frameworks -I$FLOX_ENV/include -std=c++20"
+export LDFLAGS="-L$FLOX_ENV/lib -Wl,-rpath,$FLOX_ENV/lib/c++ -fuse-ld=$FLOX_ENV/bin/ld64.lld"
+export LIBCLANG_PATH="$FLOX_ENV/lib"
+export CMAKE_REQUIRED_INCLUDES="$FLOX_ENV/include"
+cmake -B build -G Ninja
+
+# Build
+cmake --build build --verbose
+
+# Install
+cmake --install $out
+'''
+
+[install]
+coreutils.pkg-path = "coreutils"
+cmake.pkg-path = "cmake"
+clang.pkg-path = "clang"
+libcxx.pkg-path = "libcxx"
+lld.pkg-path = "lld"
+ninja.pkg-path = "ninja"
+lowdown.pkg-path = "lowdown"
+# macOS specific
+corefoundation = { pkg-path = "darwin.apple_sdk.frameworks.CoreFoundation", systems = [ "aarch64-darwin", "x86_64-darwin" ] }
+iokit = { pkg-path = "darwin.apple_sdk.frameworks.IOKit", systems = [ "aarch64-darwin", "x86_64-darwin" ] }
+sysctl = { pkg-path = "sysctl", systems = [ "aarch64-darwin", "x86_64-darwin" ] }
+
+[vars]
+# message = "Howdy"
+
+[hook]
+# on-activate = '''
+#   # Set variables, create files and directories
+#   venv_dir="$(mktemp -d)"
+#   export venv_dir
+#
+#   # Perform initialization steps, e.g. create a python venv
+#   python -m venv "$venv_dir"
+# '''
+
+[profile]
+# common = '''
+#   echo "it's gettin' flox in here"
+# '''
+
+[services]
+# postgres.command = "postgres --config-file=pg.conf"
+
+[options]
+systems = ["aarch64-darwin", "aarch64-linux", "x86_64-darwin", "x86_64-linux"]
+cuda-detection = false
